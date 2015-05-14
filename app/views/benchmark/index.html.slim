@@ -1,0 +1,13 @@
+h1 Check the logs
+pre
+  - Benchmark.bm do |x|
+    - x.report("with collection") do
+      - render @results
+
+    - x.report("with partial") do
+      - @results.each do |result|
+        - render result
+
+    - x.report("with helper") do
+      - @results.each do |result|
+        - item(result.name)
